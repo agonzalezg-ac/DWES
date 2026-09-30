@@ -28,7 +28,6 @@
     PruebaConGlobal();
     PruebaConGlobals();
     ?>
-<!-- s -->
 </body>
 
 </html>
