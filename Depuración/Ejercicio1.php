@@ -27,7 +27,7 @@ foreach ($notas as $alumno => $nota) {
         echo $alumno . ": " . $nota . " - SUSPENSO<br>";
     }
 
-    $suma = $nota;
+    $suma += $nota;
 }
 
 $media = $suma / count($notas);

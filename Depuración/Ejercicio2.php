@@ -22,7 +22,7 @@ foreach ($productos as $producto => $stock) {
         echo "STOCK BAJO<br>";
     }
 
-    if ($stock < $mayorStock) {
+    if ($stock > $mayorStock) {
         $mayorStock = $stock;
         $productoMayor = $producto;
     }
