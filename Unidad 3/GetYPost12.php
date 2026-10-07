@@ -10,36 +10,47 @@ header('Content-Type: text/html; charset=utf-8');
 </head>
 
 <body>
+    <h1>Buscar Usuario</h1>
     <form method="get" action="">
-        <label for="producto">Producto:</label>
-        <input type="text" id="producto" name="producto" required>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
         <button type="submit">Enviar</button>
     </form>
-    </p>
     <?php
     if (!empty($_GET)) {
-        $producto = $_GET['producto'];
-        echo "<p>Producto: $producto</p>";
+        $nombre = $_GET['nombre'];
+        echo "<p>Buscando usuario: $nombre</p>";
     }
     ?>
+    <h1>Registrar Usuario</h1>
     <form method="post" action="">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        </p>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
         <label for="email">Correo electrónico:</label>
         <input type="email" id="email" name="email" required>
-        </p>
-        <label for="ciudad">Ciudad:</label>
-        <input type="text" id="ciudad" name="ciudad" required>
         <button type="submit">Enviar</button>
     </form>
     <?php
     if (!empty($_POST)) {
         $nombre = $_POST['nombre'];
         echo "<p>Nombre: $nombre</p>";
+        $apellidos = $_POST['apellidos'];
+        echo "<p>Apellidos: $apellidos</p>";
+        $edad = $_POST['edad'];
+        if ($edad < 18) {
+            echo "<p>Menor de edad</p>";
+        } else if ($edad >= 18 && $edad < 65) {
+            echo "<p>Adulto</p>";
+        } else {
+            echo "<p>Senior</p>";
+        }
         $email = $_POST['email'];
         echo "<p>Correo electrónico: $email</p>";
-        $ciudad = $_POST['ciudad'];
-        echo "<p>Ciudad: $ciudad</p>";
     }
     ?>
 </body>
